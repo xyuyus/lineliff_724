@@ -4,6 +4,9 @@ body {
 .logo img {
   width: 150px;
 }
+.profile img {
+  width: 200px;
+}
 .form-signin {
   border-radius: 8px;
   padding: 2.5rem 2rem;

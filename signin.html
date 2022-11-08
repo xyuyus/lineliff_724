@@ -32,12 +32,11 @@
         </div>
       </div>
       <div class="row info-line justify-content-center">
-        <div class="col-lg-5">
+        <div class="col-lg-5 profile">
           <img id="pictureUrl" />
           <p id="userId">userId :</p>
           <p id="displayName">displayName :</p>
           <p id="statusMessage">statusMessage :</p>
-          <p id="getDecodedIDToken">Email :</p>
         </div>
       </div>
     </div>
@@ -50,9 +49,6 @@
         document.getElementById("userId").append(profile.userId);
         document.getElementById("statusMessage").append(profile.statusMessage);
         document.getElementById("displayName").append(profile.displayName);
-        document
-          .getElementById("getDecodedIDToken")
-          .append(liff.getDecodedIDToken().email);
       }
 
       async function main() {
