@@ -41,7 +41,7 @@
 
   </div>
   </div>
-  <!-- <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
       async function getUserProfile() {
         const profile = await liff.getProfile();
@@ -53,48 +53,6 @@
           .getElementById("getDecodedIDToken")
           .append(liff.getDecodedIDToken().email);
       }
-      async function main() {
-        await liff.init({ liffId: "1657629198-KLjx4r8Q" });
-          if (liff.isLoggedIn()) {
-            getUserProfile();
-          } else {
-            liff.login();
-          }
-      }
-      main();
-    </script> -->
-    <script src="https://static.line-scdn.net/liff/edge/versions/2.21.1/sdk.js"></script>
-  <script>
-      function logOut() {
-        liff.logout();
-        window.location.reload();
-      }
-
-      function closed() {
-        liff.closeWindow();
-      }
-
-      async function getUserProfile() {
-        const profile = await liff.getProfile();
-        document.getElementById("pictureUrl").src = profile.pictureUrl;
-        document.getElementById("userId").append(profile.userId);
-        document.getElementById("statusMessage").append(profile.statusMessage);
-        document.getElementById("displayName").append(profile.displayName);
-        document
-          .getElementById("getDecodedIDToken")
-          .append(liff.getDecodedIDToken().email);
-      }
-
-      function getEnvironment() {
-        document.getElementById("accessToken").append(liff.getAccessToken());
-
-        if (liff.isInClient()) {
-          document.getElementById("btnLogOut").style.display = "none";
-        } else {
-          document.getElementById("btnClose").style.display = "none";
-        }
-      }
-
       async function main() {
         liff.ready.then(() => {
           if (liff.isLoggedIn()) {
@@ -104,14 +62,10 @@
             liff.login();
           }
         });
-        await liff.init({ liffId: "1657469118-qJG4zobN" });
+        await liff.init({ liffId: "1657629198-KLjx4r8Q" });
       }
       main();
     </script>
-    <script
-      src="https://static.line-scdn.net/liff/edge/2/non-ios-extensions.js"
-      type="text/javascript"
-    ></script>
 </body>
 
 </html>
