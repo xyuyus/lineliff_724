@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIGNIN - 724 Market</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SIGNIN - 724 Market</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-</head>
-
-<body>
-  <div class="container mt-4">
-    <div class="text-center">
-      <a href="#" class="logo text-center">
-        <img class="" src="logo-724.png" alt="logo 724" /></a>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-5">
-        <form class="form-signin" action="#!">
-          <h1 class="title">Enter your account</h1>
-          <input id="email" type="email" placeholder="Email" />
-          <input id="password" type="password" placeholder="Password" />
-          <button class="btn-signin w-100 mt-3" type="submit">
-            SIGN IN
-          </button>
-        </form>
+  <body>
+    <div class="container mt-4">
+      <div class="text-center">
+        <a href="#" class="logo text-center">
+          <img class="" src="logo-724.png" alt="logo 724"
+        /></a>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <form class="form-signin" action="#!">
+            <h1 class="title">Enter your account</h1>
+            <input id="email" type="email" placeholder="Email" />
+            <input id="password" type="password" placeholder="Password" />
+            <button class="btn-signin w-100 mt-3" type="submit">SIGN IN</button>
+          </form>
+        </div>
+      </div>
+      <div class="row info-line justify-content-center">
+        <div class="col-lg-5">
+          <img id="pictureUrl" />
+          <p id="userId">userId :</p>
+          <p id="displayName">displayName :</p>
+          <p id="statusMessage">statusMessage :</p>
+          <p id="getDecodedIDToken">Email :</p>
+        </div>
       </div>
     </div>
-    <div class="row info-line justify-content-center">
-      <div class="col-lg-5">
-      <img id="pictureUrl" />
-      <p id="userId">userId :</p>
-      <p id="displayName">displayName :</p>
-      <p id="statusMessage">statusMessage :</p>
-      <p id="getDecodedIDToken">Email :</p>
-      </div>
-    </div>
 
-  </div>
-  </div>
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.21.1/sdk.js"></script>
-  <script>
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.21.1/sdk.js"></script>
+    <script>
       async function getUserProfile() {
         const profile = await liff.getProfile();
         document.getElementById("pictureUrl").src = profile.pictureUrl;
@@ -54,7 +55,6 @@
           .append(liff.getDecodedIDToken().email);
       }
 
-   
       async function main() {
         liff.ready.then(() => {
           if (liff.isLoggedIn()) {
@@ -67,10 +67,5 @@
       }
       main();
     </script>
-    <script
-      src="https://static.line-scdn.net/liff/edge/2/non-ios-extensions.js"
-      type="text/javascript"
-    ></script>
-</body>
-
+  </body>
 </html>
